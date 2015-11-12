@@ -1,0 +1,84 @@
+﻿<!-- Actions section -->
+
+<div class="col-sm-12">
+
+    <div class="panel panel-default">
+        <div class="panel-body panel-body-no-padding">
+            <p>{{vm.message}}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-sm-6">
+    <form class="form-horizontal" name="registrationForm">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="email" class="col-sm-4 control-label">Email:</label>
+                    <div class="col-sm-7">
+                        <input id="email" name="email" type="email" class="form-control" ng-model="vm.registration.email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-4 control-label">Password:</label>
+                    <div class="col-sm-7">
+                        <input id="password" name="password" type="password" class="form-control" ng-model="vm.registration.password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-4 control-label">First Name:</label>
+                    <div class="col-sm-7">
+                        <input id="firstName" name="firstName" type="text" class="form-control" ng-model="vm.registration.firstName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-4 control-label">Last Name:</label>
+                    <div class="col-sm-7">
+                        <input id="lastName" name="lastName" type="text" class="form-control" ng-model="vm.registration.lastName" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-9 col-sm-2">
+                        <button class="btn btn-primary" ng-click="vm.register(registrationForm)">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="col-sm-6">
+    <form class="form-horizontal" name="loginForm">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="email" class="col-sm-4 control-label">Email:</label>
+                    <div class="col-sm-7">
+                        <input id="email" name="email" type="text" class="form-control" ng-model="vm.loginDetails.email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-4 control-label">Password:</label>
+                    <div class="col-sm-7">
+                        <input id="password" name="password" type="password" class="form-control" ng-model="vm.loginDetails.password" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-8 col-sm-1">
+                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                        </fb:login-button>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-success" ng-click="vm.login(loginForm)">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="col-sm-10">
+        <button class="btn btn-primary" ng-click="vm.testEmail()">Test Email</button>
+    </div>
+</div>
+
+
